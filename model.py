@@ -4,6 +4,7 @@ import pandas as pd
 import scipy.stats as stats
 from scipy.optimize import minimize
 import matplotlib.pyplot as plt
+import warnings
 
 def model_fit(data, plot_model=True):
     """
@@ -82,7 +83,6 @@ def model_fit(data, plot_model=True):
     fraction_saturation = get_fraction_saturation(baseline_params['saturation'], data_dict, 
                                                   prepulse_conditions, startle_sounds_each_condition)
     if fraction_saturation < 0.75:
-        import warnings
         warnings.warn("Max baseline startle response < 75% of estimated baseline startle saturation for this animal. " + 
                       "Consider measuring the baseline prepulse condition at louder startle sound levels to better " +
                       "estimate the baseline startle response curve.")
@@ -419,6 +419,7 @@ def extract_prepulse_conditions(df):
     '''
     all_conditions = df[['prepulse_sound', 'delay']].drop_duplicates().values
     valid_conditions = []
+    invalid_conditions = []
     baseline_condition = False
     for idx, condition in enumerate(all_conditions):
         if condition[0] == 0:
@@ -430,6 +431,11 @@ def extract_prepulse_conditions(df):
             entries = df[(df['prepulse_sound']==condition[0]) & (df['delay']==condition[1])]
             if entries.shape[0] >= 4:
                 valid_conditions.append(tuple(condition))
+            else:
+                invalid_conditions.append(tuple(condition))
+    if len(invalid_conditions) > 0:
+        warnings.warn('Valid prepulse conditions must be measured at a minimum of four startle sound levels.')
+        print("Invalid prepulse conditions that were removed from the model: " + str(invalid_conditions))
     valid_conditions.insert(0, baseline_condition) # always insert baseline condition in the first position
     startle_sounds_each_condition = {}
     for condition in valid_conditions:
