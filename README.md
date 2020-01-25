@@ -1,6 +1,6 @@
 # PPI Model
 
-This repository contains code implementing a new model of prepulse inhibition of the acoustic startle response (PPI). This will fit the model to acoustic startle data for an individual animal. You can then analyze the parameters of the model across animals. Please refer to the associated manuscript for a detailed description of the model and how it can be used. 
+This repository contains code implementing a new model of prepulse inhibition of the acoustic startle response (PPI). This will fit the model to acoustic startle data for an individual animal. Please refer to the associated manuscript for a detailed description of the model and how it can be used. 
 
 In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** demos how to import and use the model. Below we have included a short walk-through of how to start using the model:
 
@@ -8,7 +8,6 @@ In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** demos how to impor
 * *prepulse sound level* - the intensity of the prepulse sound (dB above baseline)
 * *startle sound level* - the intensity of the potentially-startling sound (dB above baseline)
 * *delay* - the delay between the prepulse and startle sounds
-* *average startle response* - the average magnitude of the animal's startle responses (note that the startle responses should be logged before taking an average, as we have shown the acoustic startle response to be non-Gausssian within animals)
 * *prepulse condition* - a unique combination of prepulse sound level and delay, which can be measured at different startle sound levels
 * *baseline prepulse condition* - a prepulse condition in which the prepulse sound level is 0 dB above baseline (i.e. no prepulse sound)
 * *stimulus* - a prepulse condition paired with a startle sound level
@@ -37,7 +36,7 @@ The input data must be either a list or a Numpy array, and either way it must be
 **plot_model** : boolean (True or False)
 If True, the function will plot the startle response vs. startle sound data for all prepulse conditions on a single figure, overlaid with the PPI model curves. We always recommend plotting every animal's model fit to ensure that the model accurately fit the data, as it is possible that some inputs could fail to converge on an appropriate model.
 
-As mentioned above, there are a few hard requirements for what kind of data must be present in order to fit the model. For more info, calling help() on any of the functions in this repo will provide information on the expected input/output behavior of the function.
+For more info, calling help() on any of the functions in this repo will provide information on the expected input/output behavior of the function.
 
 
 ## Output of the model_fit() function
