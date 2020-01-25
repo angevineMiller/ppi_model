@@ -10,7 +10,6 @@ In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** demos how to impor
 * *delay* - the delay between the prepulse and startle sounds
 * *prepulse condition* - a unique combination of prepulse sound level and delay, which can be measured at different startle sound levels
 * *baseline prepulse condition* - a prepulse condition in which the prepulse sound level is 0 dB above baseline (i.e. no prepulse sound)
-* *stimulus* - a prepulse condition paired with a startle sound level
 * *control stimulus* - a stimulus in which the startle sound level equals 0 dB above baseline (i.e. no startle sound)
 
 ## Data requirements for this model
