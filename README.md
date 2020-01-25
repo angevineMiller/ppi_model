@@ -26,6 +26,7 @@ We have shown that the distribution of startle responses is non-Gaussian and clo
 ## Parameters of the model_fit() function
 
 **input_data** : Nx4 Numpy array or list
+
 The input data must be either a list or a Numpy array, and either way it must be shaped Nx4 (i.e. four columns and any number of rows). Each row is a single stimulus and the animal's average startle response to that stimulus. The rows can occur in any order, but the columns must be in the following order: 
 1) prepulse sound level
 2) delay
@@ -33,13 +34,14 @@ The input data must be either a list or a Numpy array, and either way it must be
 4) average startle response for this animal at this stimulus
 
 **plot_model** : boolean (True or False)
+
 If True, the function will plot the startle response vs. startle sound data for all prepulse conditions on a single figure, overlaid with the PPI model curves. We always recommend plotting every animal's model fit to ensure that the model accurately fit the data, as it is possible that some inputs could fail to converge on an appropriate model.
 
 For more info, calling help() on any of the functions in this repo will provide information on the expected input/output behavior of the function.
 
 
 ## Output of the model_fit() function
-The model_fit function will return a dictionary containing all of the parameters of the model and some other metrics. The structure of the dictionary is the following:
+The model_fit function will return a dictionary containing all of the parameters of the model and some other metrics. The keys to the dictionary are strings, which map in the following way:
 
 * 'baseline_parameters' : list - baseline saturation, baseline midpoint, baseline slope
 * 'startle_scaling_parameters' : dict - mapping from (prepulse sound level, delay) -> startle scaling for that condition
