@@ -27,11 +27,11 @@ We have shown that the distribution of startle responses is non-Gaussian and clo
 
 **input_data** : Nx4 Numpy array or list
 
-The input data must be either a list or a Numpy array, and either way it must be shaped Nx4 (i.e. four columns and any number of rows). Each row is a single stimulus and the animal's average startle response to that stimulus. The rows can occur in any order, but the columns must be in the following order: 
+The input data must be either a list or a Numpy array, and it must be shaped Nx4 (four columns and any number of rows). There should not be any headers. Each row is a single stimulus and the animal's average startle response to that stimulus. The rows can occur in any order, but the columns must be in the following order: 
 1) prepulse sound level
 2) delay
 3) startle sound level
-4) average startle response for this animal at this stimulus
+4) average startle response for this animal and stimulus
 
 **plot_model** : boolean (True or False)
 
