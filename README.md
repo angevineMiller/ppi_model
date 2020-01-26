@@ -2,7 +2,7 @@
 
 This repository contains Python code implementing a new model of prepulse inhibition of the acoustic startle response (PPI). This will fit the model to acoustic startle data for an individual animal. Please refer to the associated manuscript for a detailed description of the model and how it can be used. 
 
-In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** demos how to use the model. Below we have included a short walk-through indicating the requirements for using the model:
+In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** is a demo using fully simulated data that shows how to use the model. Below we have included a short walk-through indicating the requirements for using the model:
 
 ## Terminology
 * *prepulse sound level* - the intensity of the prepulse sound (dB above baseline)
