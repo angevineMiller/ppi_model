@@ -1,6 +1,8 @@
 # PPI Model
 
-This repository contains Python code implementing a new model of prepulse inhibition of the acoustic startle response (PPI). This will fit the model to acoustic startle data for an individual animal. Please refer to the associated manuscript for a detailed description of the model and how it can be used. Presently the model fits only PPI, and it will not fit prepulse facilitation (PPF). It would be possible to adapt the model to also fit PPF by changing the parameter bounds in the model fitting routine.
+This repository contains Python code implementing a new model of prepulse inhibition of the acoustic startle response (PPI), first described in [Miller, E.A., Kastner, D.B., Grzybowski, M.N. et al. Robust and replicable measurement for prepulse inhibition of the acoustic startle response. *Molecular Psychiatry* (2020).](https://www.nature.com/articles/s41380-020-0703-y)
+
+The code here will fit the model to acoustic startle data for an individual animal. Please refer to the associated manuscript for a detailed description of the model and how it can be used. Presently the model fits only PPI, and it will not fit prepulse facilitation (PPF). It would be possible to adapt the model to also fit PPF by changing the parameter bounds in the model fitting routine.
 
 In this repo, the Jupyter notebook **'ppi_model_demo.ipynb'** is a demo using fully simulated data that shows how to use the model. Below we have included a short walk-through indicating the requirements for using the model:
 
